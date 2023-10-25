@@ -19,22 +19,7 @@ const routes: RouteObject[] = [
     path: "/register",
     Component: RegisterPage,
   },
-  {
-    path: "/carts",
-    Component: Cart,
-  },
-  {
-    path: "/contact",
-    Component: Contacts,
-  },
-  {
-    path: "/orders",
-    Component: HistoryOrders,
-  },
-  {
-    path: "/products",
-    Component: ProductsAll,
-  },
+
   {
     id: "root",
     path: "/",
@@ -43,6 +28,23 @@ const routes: RouteObject[] = [
       {
         index: true,
         Component: DashboardPage,
+      },
+      {
+        path: "/contact",
+        Component: Contacts,
+      },
+      {
+        path: "/cart",
+        Component: Cart,
+      },
+
+      {
+        path: "/orders",
+        Component: HistoryOrders,
+      },
+      {
+        path: "/products",
+        Component: ProductsAll,
       },
     ],
   },

@@ -1,7 +1,7 @@
 import { createAction } from "@reduxjs/toolkit";
 import { PayloadActionCreator } from "@reduxjs/toolkit/src/createAction";
 
-const addToCart: PayloadActionCreator<undefined> = createAction("ADD_TO_CART");
+const addToCart: PayloadActionCreator<any> = createAction("ADD_TO_CART");
 const changeQuantity: PayloadActionCreator<any> =
   createAction("CHANGE_Quantity");
 const checkout: PayloadActionCreator<any> = createAction("CHECKOUT");

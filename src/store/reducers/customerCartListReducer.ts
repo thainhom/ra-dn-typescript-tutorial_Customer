@@ -71,11 +71,18 @@ const customerCartListReducer = createReducer(initialState, {
   },
   CHANGE_Quantity: (state, action: PayloadAction<CartItem>) => {
     const { product_id, quantity } = action.payload;
+
     const updatedCart = state.cart.map((item) => {
       if (item.product_id === product_id) {
-        item.quantity = quantity;
-        item.subTotal = item.unit_price * quantity;
+        // item.quantity = quantity;
+        // item.subTotal = item.unit_price * quantity;
+        return {
+          ...item,
+          quantity: quantity,
+          subTotal: item.unit_price * quantity,
+        };
       }
+
       return item;
     });
 

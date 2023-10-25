@@ -19,13 +19,17 @@ function CartList() {
     (state: RootState) => state.customerCartListReducer.total
   );
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>, id: string) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    product_id?: number
+  ) => {
     const quantity = Number(e.target.value);
 
     if (quantity > 0) {
-      dispatch(changeQuantity(id,quantity));
+      dispatch(changeQuantity({ product_id, quantity }));
     }
     console.log(quantity);
+    console.log(product_id);
   };
 
   const handleDelete = (product_id: any) => {
@@ -57,7 +61,7 @@ function CartList() {
                   type="number"
                   value={item.quantity}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    handleChange(e, item.id)
+                    handleChange(e, item.product_id)
                   }
                 />
               </td>

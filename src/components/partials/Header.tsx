@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "react-bootstrap";
+import { Badge, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Navbar from "react-bootstrap/Navbar";
@@ -62,7 +62,13 @@ function CustomerHeaderComponent() {
             </Link>
 
             <Link to="/cart" className="float-end m-1">
-              {numberOfItems}
+              <Button variant="warning">
+                {" "}
+                Cart
+                <Badge bg="warning" text="dark">
+                  ({numberOfItems})
+                </Badge>
+              </Button>{" "}
             </Link>
             <Link to="/orders" className="float-end m-1">
               <Button className="text-center" variant="info">

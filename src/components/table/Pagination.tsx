@@ -64,7 +64,7 @@ const CustomerPaginationComponent: React.FC<AdminPaginationProps> = ({
           onClick={() => handleChangePage(totalPage)}
         />
       </Pagination>
-      <p className="float-end mx-3">
+      <p className="float-end mx-3 text-white">
         <strong>Tổng số bản ghi:</strong> {total}
       </p>
     </>

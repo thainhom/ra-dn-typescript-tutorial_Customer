@@ -10,8 +10,8 @@ import { Product } from "../../apis/product.api";
 
 // Sửa lại kiểu của props
 export interface ProductListProps {
-  isShowSort: boolean;
-  isShowCategory: boolean;
+  isShowSort?: boolean;
+  isShowCategory?: boolean;
 }
 interface SearchProductsResponse {
   records: Product[];
