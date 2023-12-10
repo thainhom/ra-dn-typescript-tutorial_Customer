@@ -17,7 +17,7 @@ const login = async (
   const requestBody = {
     username: username,
     password: password,
-    type: type,
+    role: 2,
   };
 
   try {
