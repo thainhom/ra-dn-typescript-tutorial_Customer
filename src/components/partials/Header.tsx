@@ -21,16 +21,19 @@ function CustomerHeaderComponent() {
     (state: RootState) => state.customerCartListReducer.numberOfItems
   );
 
-  const handleLogOut = () => {
-    authApi
-      .logout()
-      .then(() => {
-        dispatch(logout());
-        navigate("/login");
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+  const handleLogOut = (e: React.MouseEvent) => {
+    e.preventDefault();
+    window.localStorage.removeItem("X-API-Key");
+    navigate("/login");
+    //   authApi
+    //     .logout()
+    //     .then(() => {
+    //       dispatch(logout());
+    //       navigate("/login");
+    //     })
+    //     .catch((error) => {
+    //       console.error(error);
+    //     });
   };
 
   return (
