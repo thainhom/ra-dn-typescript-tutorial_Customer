@@ -11,8 +11,9 @@ interface Order {
 }
 
 function HistoryOrders() {
-    const storedOrders = window.localStorage.getItem("orders");
-    const orders: Order[] = typeof storedOrders === "string" ? JSON.parse(storedOrders) : [];
+  const storedOrders = window.localStorage.getItem("orders");
+  const orders: Order[] =
+    typeof storedOrders === "string" ? JSON.parse(storedOrders) : [];
 
   return (
     <>
@@ -33,7 +34,7 @@ function HistoryOrders() {
               <td>{index + 1}</td>
               <td>{item.serial_number} </td>
               <td>{moment(item.order_at).format("YYYY-MM-DD HH:mm")}</td>
-              <td>{item.total_price} </td>
+              <td>${item.total_price} </td>
               <td>{item.status} </td>
             </tr>
           ))}
